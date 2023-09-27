@@ -6,15 +6,15 @@ const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&a
 }`;
 
 const transforms = [
-  `translate(100%, 100%) rotateZ(12deg)`,
-  `translate(0px, 100%) rotateZ(9deg)`,
-  `translate(-100%, 100%) rotateZ(6deg)`,
-  `translate(100%, 0px) rotateZ(3deg)`,
-  `translate(0px, 0px) rotateZ(0deg)`,
-  `translate(-100%, 0px) rotateZ(-3deg)`,
-  `translate(100%, -100%) rotateZ(-6deg)`,
-  `translate(0, -100%) rotateZ(-9deg)`,
-  `translate(-100%, -100%) rotateZ(-12deg)`,
+  `translate(100%,100%) rotateZ(12deg)`,
+  `translate(0px,100%) rotateZ(9deg)`,
+  `translate(-100%,100%) rotateZ(6deg)`,
+  `translate(100%,0px) rotateZ(3deg)`,
+  `translate(0px,0px) rotateZ(0deg)`,
+  `translate(-100%,0px) rotateZ(-3deg)`,
+  `translate(100%,-100%) rotateZ(-6deg)`,
+  `translate(0,-100%) rotateZ(-9deg)`,
+  `translate(-100%,-100%) rotateZ(-12deg)`,
 ];
 
 const srcUrl = Array(9).fill('./assets/defolt.jpg');
@@ -34,6 +34,15 @@ input.addEventListener('change', (e) => {
   searchQuery = e.target.value;
   console.log('searchQuery====', searchQuery);
   setSrcUrl();
+});
+
+arrImgContainer.forEach((el, index) => {
+  el.addEventListener('click', () => {
+    el.style.transform = transforms[index].split(' ')[0] + 'scale(2)';
+    setTimeout(() => {
+      el.style.transform = "none"
+    }, 1500);
+  });
 });
 
 const setSrcUrl = async () => {
