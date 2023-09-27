@@ -1,9 +1,7 @@
 const apiKey = '878ccfcbfee4ad2f3999a8c498741ab3';
 const keyRespons = true;
 let searchQuery = 'all';
-const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&extras=url_h&format=json&nojsoncallback=1&per_page=9&text=${
-  searchQuery || 'all'
-}`;
+const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&extras=url_h&format=json&nojsoncallback=1&per_page=9&text=${searchQuery}`;
 
 const transforms = [
   `translate(100%,100%) rotateZ(12deg)`,
@@ -40,7 +38,7 @@ arrImgContainer.forEach((el, index) => {
   el.addEventListener('click', () => {
     el.style.transform = transforms[index].split(' ')[0] + 'scale(2)';
     setTimeout(() => {
-      el.style.transform = "none"
+      el.style.transform = 'none';
     }, 1500);
   });
 });
@@ -62,7 +60,7 @@ const setSrcUrl = async () => {
   );
 
   arrImg.forEach((image, index) => {
-    image.src = newSrcUrl[index] || srcUrl[0];
+    image.src = newSrcUrl[index] || srcUrl[index];
   });
 
   arrImgContainer.forEach((imageContainer, index) => {
@@ -74,10 +72,14 @@ const setSrcUrl = async () => {
 
 setSrcUrl();
 
+arrImg.forEach((image) => {
+  image.onerror = () => {
+    image.src = srcUrl[0];
+  };
+});
+
 async function getFetchdata() {
-  const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&extras=url_h&format=json&nojsoncallback=1&per_page=9&text=${
-    searchQuery || 'all'
-  }`;
+  const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&extras=url_h&format=json&nojsoncallback=1&per_page=9&text=${searchQuery}`;
   try {
     const resflickr = await fetch(url);
     const dataflickr = await resflickr.json();
