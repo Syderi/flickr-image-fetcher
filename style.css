@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
-  background-image: url("./assets/fon.jpg");
+  background-image: url("./assets/fon3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -25,7 +25,7 @@ header {
 }
 header h1 {
   font-size: 36px;
-  background: linear-gradient(45deg, rgba(255, 38, 0, 0.8901960784), #10ca80, #9900ff);
+  background: linear-gradient(45deg, #e7e7ec, #f0effa, #fefff0);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
@@ -40,10 +40,10 @@ header .clear-icon {
   right: 10px;
   transform: translateY(-50%);
   cursor: pointer;
-  color: red;
+  color: rgb(125, 132, 214);
 }
 header .input {
-  border: 3px solid red;
+  border: 3px solid #3d52ca;
   outline: none;
   padding: 5px;
   font-size: 16px;

@@ -17,12 +17,14 @@ const transforms = [
   `translate(-100%,-100%) rotateZ(-12deg)`,
 ];
 
-const srcUrl = Array(9).fill('./assets/defolt.jpg');
+const srcUrl = Array(9).fill('./assets/defolt.png');
 
 const arrImgContainer = document.querySelectorAll('.image-container');
 const arrImg = document.querySelectorAll('.image');
 const input = document.querySelector('.input');
 const clearIcon = document.querySelector('.clear-icon');
+
+input.focus()
 
 clearIcon.addEventListener('click', () => {
   if (input.value.trim() === '') return;

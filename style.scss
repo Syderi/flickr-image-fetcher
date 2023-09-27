@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
-  background-image: url('./assets/fon.jpg');
+  background-image: url('./assets/fon3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -24,7 +24,7 @@ header {
   min-height: 100px;
   h1 {
     font-size: 36px;
-    background: linear-gradient(45deg, #ff2600e3, #10ca80, #9900ff);
+    background: linear-gradient(45deg,#e7e7ec,#f0effa, #fefff0);
     background-clip: text;
     color: transparent;
   }
@@ -40,11 +40,11 @@ header {
     right: 10px;
     transform: translateY(-50%);
     cursor: pointer;
-    color: red;
+    color: rgb(125, 132, 214);
   }
 
   .input {
-    border: 3px solid red;
+    border: 3px solid #3d52ca;
     outline: none;
     padding: 5px;
     font-size: 16px;
