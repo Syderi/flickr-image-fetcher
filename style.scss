@@ -81,4 +81,9 @@ img {
   height: 100%;
   object-fit: cover;
   aspect-ratio: 1 / 1;
+  transition: all 1s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
