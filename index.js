@@ -1,7 +1,9 @@
 const apiKey = '878ccfcbfee4ad2f3999a8c498741ab3';
 const keyRespons = true;
 let searchQuery = 'all';
-const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&extras=url_h&format=json&nojsoncallback=1&per_page=9&text=${searchQuery}`;
+const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&extras=url_h&format=json&nojsoncallback=1&per_page=9&text=${
+  searchQuery || 'all'
+}`;
 
 const transforms = [
   `translate(100%,100%) rotateZ(12deg)`,
@@ -24,13 +26,13 @@ const clearIcon = document.querySelector('.clear-icon');
 
 clearIcon.addEventListener('click', () => {
   if (input.value.trim() === '') return;
+  searchQuery = 'all'
   input.value = '';
   setSrcUrl();
 });
 
 input.addEventListener('change', (e) => {
   searchQuery = e.target.value;
-  console.log('searchQuery====', searchQuery);
   setSrcUrl();
 });
 
