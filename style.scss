@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url('./assets/fon.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  min-height: 100px;
+  h1 {
+    font-size: 36px;
+    background: linear-gradient(45deg, #ff2600e3, #10ca80, #9900ff);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .input-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .clear-icon {
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: red;
+  }
+
+  .input {
+    border: 3px solid red;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+}
+
+.matrix {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, calc(33% - 20px));
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image-container {
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  transition: all 1.0s ease;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
